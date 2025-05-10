@@ -19,3 +19,7 @@ def read_root():
 @app.get("/api/churn/{user_id}")
 def get_prediction_for_item(user_id: str):
     return {"user_id": user_id, "score": random.random()}
+
+@app.get("/service-status")
+def health_check():
+    return {"status": "ok"}

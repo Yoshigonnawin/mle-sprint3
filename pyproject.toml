@@ -1,0 +1,13 @@
+[project]
+name = "mle-sprint3"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "catboost==1.2.7",
+    "fastapi==0.68.0",
+    "pydantic==1.10.20",
+    "scikit-learn==1.6.0",
+    "uvicorn>=0.15.0",
+]

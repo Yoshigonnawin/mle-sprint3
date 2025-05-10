@@ -20,6 +20,16 @@ def read_root():
 def get_prediction_for_item(user_id: str):
     return {"user_id": user_id, "score": random.random()}
 
+
 @app.get("/service-status")
 def health_check():
     return {"status": "ok"}
+
+
+@app.get("/api/credit/{client_id}")
+def is_credit_approved(client_id: str):
+    score = random.random()
+    if score > 0.8:
+        return {"approved": 1}
+    else:
+        return {"approved": 0}

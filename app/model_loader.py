@@ -23,4 +23,4 @@ if __name__ == "__main__":
     model = load_churn_model(pth.resolve().__str__())
 
     # выведите параметры модели через print(f"Model parameter names: {}")
-    print(f'Model parameter names: {model.feature_names_}')
+    print(f"Model parameter names: {model.feature_names_}")

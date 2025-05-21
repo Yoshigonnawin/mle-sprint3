@@ -79,7 +79,7 @@ class FastApiHandler:
             bool: True — если есть нужные параметры, False — иначе
         """
 
-        if set(model_params.keys()) == set(self.required_model_params):
+        if   all(item in model_params.keys() for item in  self.required_model_params ):
             return True
         return False
 
@@ -141,7 +141,7 @@ class FastApiHandler:
 if __name__ == "__main__":
     # Создаём тестовый запрос
     test_params = {
-        "client_id": 123,
+        "client_id": "123",
         "model_params": {
             "gender": 1.0,
             "Type": 0.5501916796819537,

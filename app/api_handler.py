@@ -79,7 +79,7 @@ class FastApiHandler:
             bool: True — если есть нужные параметры, False — иначе
         """
 
-        if   all(item in model_params.keys() for item in  self.required_model_params ):
+        if all(item in model_params.keys() for item in self.required_model_params):
             return True
         return False
 

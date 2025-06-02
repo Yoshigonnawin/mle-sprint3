@@ -1,0 +1,35 @@
+services:
+  # название сервиса 
+  main-app:  
+    # указываем путь к .env файлу с переменными окружения
+    env_file:
+      - ./.env
+    
+    # собираем образ помощью Dockerfile
+    build:
+      dockerfile: Dockerfile_main
+
+    # перенаправляем порты
+    # используем переменные из .env файла
+    ports:
+      - "${MAIN_APP_PORT_VM}:${MAIN_APP_PORT}"
+    
+
+  # название сервиса 
+  counter-app:
+    # указываем путь к .env файлу с переменными окружения
+    env_file:
+      - ./.env
+      
+    hostname: counter
+    
+    # собираем образ с помощью Dockerfile
+    build:
+      dockerfile: Dockerfile_counter
+    
+    # перенаправляем порты
+    # используем переменные из .env файла
+    ports:
+      - "${COUNTER_APP_PORT_VM}:${COUNTER_APP_PORT}"
+    
+    

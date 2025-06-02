@@ -6,7 +6,7 @@ from fastapi import FastAPI
 app = FastAPI()
 
 # standalone режим - один инстанс приложения
-# глобальная переменная app.counter имеет одно и то же значение 
+# глобальная переменная app.counter имеет одно и то же значение
 # для всего приложения
 app.type = "00"
 app.counter = 0
@@ -17,7 +17,8 @@ app.counter = 0
 def count():
     app.counter += 1
 
+
 # получить посчитанное число запросов
 @app.get("/get_counts")
 def count():
-    return {'counts': app.counter}
+    return {"counts": app.counter}

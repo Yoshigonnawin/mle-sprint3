@@ -21,5 +21,7 @@ services:
     ports:
       - 9090:9090
     volumes:
-      - "./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
+      - "/home/yoh/project/mle-sprint3/prometheus_server/prometheus.yml:/etc/prometheus/prometheus.yml:ro"
     hostname: prometheus
+    depends_on:
+      - main-app
